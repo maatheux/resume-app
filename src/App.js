@@ -5,7 +5,8 @@ import {
     View,
     Image,
     Linking,
-    TouchableOpacity
+    TouchableOpacity,
+    ScrollView
 } from 'react-native';
 // import { Icon } from 'react-native-vector-icons/Feather';
 // Importar icones, com npm i react-native-vector-icons
@@ -18,85 +19,108 @@ import photo from './assets/img/profilePhoto.jpg';
 
 export default function App() {
     return (
-        <View style={styles.page}>
-            <View style={styles.headerContainer}>
-                <Image source={photo} style={styles.photo} />
-                <Text style={styles.name}>Matheus Marinho</Text>
-                <Text style={styles.job}>Desenvolvedor Mobile</Text>
-                <View style={styles.socialMedias}>
-                    <TouchableOpacity
-                        onPress={() =>
-                            Linking.openURL('https://github.com/marinhoo')
-                        }
-                    >
-                        <Feather name="github" size={30} />
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        onPress={() =>
-                            Linking.openURL(
-                                'https://www.linkedin.com/in/matheusmarinho04/'
-                            )
-                        }
-                    >
-                        <Feather name="linkedin" size={30} />
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        onPress={() =>
-                            Linking.openURL('https://twitter.com/omarinhou')
-                        }
-                    >
-                        <Feather name="twitter" size={30} />
-                    </TouchableOpacity>
-                </View>
-            </View>
-            <View style={styles.cardsContainer}>
-                <View style={styles.card}>
-                    <View style={styles.cardHeader}>
-                        <Text style={styles.cardHeaderText}>
-                            Experiência Profissional
-                        </Text>
+        <ScrollView>
+            <ScrollView style={styles.page}>
+                <View style={styles.headerContainer}>
+                    <Image source={photo} style={styles.photo} />
+                    <Text style={styles.name}>Matheus Marinho</Text>
+                    <Text style={styles.job}>Desenvolvedor Mobile</Text>
+                    <View style={styles.socialMedias}>
+                        <TouchableOpacity
+                            onPress={() =>
+                                Linking.openURL('https://github.com/marinhoo')
+                            }
+                        >
+                            <Feather name="github" size={30} />
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() =>
+                                Linking.openURL(
+                                    'https://www.linkedin.com/in/matheusmarinho04/'
+                                )
+                            }
+                        >
+                            <Feather name="linkedin" size={30} />
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() =>
+                                Linking.openURL('https://twitter.com/omarinhou')
+                            }
+                        >
+                            <Feather name="twitter" size={30} />
+                        </TouchableOpacity>
                     </View>
-                    <View style={styles.cardContent}>
-                        <View>
+                </View>
+                <View style={styles.cardsContainer}>
+                    <View style={styles.card}>
+                        <View style={styles.cardHeader}>
+                            <Text style={styles.cardHeaderText}>
+                                Experiência Profissional
+                            </Text>
+                        </View>
+                        <View style={styles.cardContent}>
+                            <View>
+                                <Text style={styles.cardContentTitle}>
+                                    Estagiário na Oi
+                                </Text>
+                                <Text style={styles.cardContentText}>
+                                    {' '}
+                                    - Automatização de processos
+                                </Text>
+                                <Text style={styles.cardContentText}>
+                                    {' '}
+                                    - Gerenciamento de banco de dados
+                                </Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View style={styles.card}>
+                        <View style={styles.cardHeader}>
+                            <Text style={styles.cardHeaderText}>
+                                Formação Academica
+                            </Text>
+                        </View>
+                        <View style={styles.cardContent}>
                             <Text style={styles.cardContentTitle}>
-                                Estagiário na Oi
+                                Universidade Estácio de Sá
                             </Text>
                             <Text style={styles.cardContentText}>
-                                {' '}
-                                - Automatização de processos
-                            </Text>
-                            <Text style={styles.cardContentText}>
-                                {' '}
-                                - Gerenciamento de banco de dados
+                                - Sistemas de Informação
                             </Text>
                         </View>
                     </View>
-                </View>
-                <View style={styles.card}>
-                    <View style={styles.cardHeader}>
-                        <Text style={styles.cardHeaderText}>
-                            Formação Academica
-                        </Text>
+                    <View style={styles.card}>
+                        <View style={styles.cardHeader}>
+                            <Text style={styles.cardHeaderText}>
+                                Habilidades Técnicas
+                            </Text>
+                        </View>
+                        <View style={styles.cardContent}>
+                            <Text style={styles.cardContentText}>- HTML</Text>
+                            <Text style={styles.cardContentText}>- CSS</Text>
+                            <Text style={styles.cardContentText}>
+                                - JavaScript
+                            </Text>
+                            <Text style={styles.cardContentText}>
+                                - React Native
+                            </Text>
+                            <Text style={styles.cardContentText}>- Python</Text>
+                            <Text style={styles.cardContentText}>- Git</Text>
+                        </View>
                     </View>
-                    <View style={styles.cardContent}>
-                        <Text style={styles.cardContentTitle}>
-                            Universidade Estácio de Sá
-                        </Text>
-                        <Text style={styles.cardContentText}>
-                            - Sistemas de Informação
-                        </Text>
-                    </View>
                 </View>
-            </View>
-        </View>
+            </ScrollView>
+        </ScrollView>
     );
 }
 
 const styles = StyleSheet.create({
     page: {
-        flex: 1,
+        width: '100%',
         backgroundColor: '#e7e7e7',
-        paddingTop: 50
+        paddingTop: 50,
+        height: '100%',
+        paddingBottom: 10
     },
     headerContainer: {
         flex: 1,
